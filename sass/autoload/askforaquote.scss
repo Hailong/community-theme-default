@@ -1,0 +1,199 @@
+/**
+ * 2007-2016 PrestaShop
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to http://www.prestashop.com for more information.
+ *
+ *  @author    PrestaShop SA <contact@prestashop.com>
+ *  @copyright 2007-2016 PrestaShop SA
+ *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ *  International Registered Trademark & Property of PrestaShop SA
+ */
+
+/*******************************************************************
+					Cart Block Styles
+********************************************************************/
+#header .quotesOuterBox {
+	// position:absolute;
+	// bottom:7px;
+	// right:15px;
+	// margin-bottom:0 !important;
+	padding-top: 50px;
+}
+#header .quotes_cart {
+	padding-top: 0px;
+}
+
+.quotesOuterBox {
+	// float:left;
+	// padding:0;
+	// margin-bottom:0;
+}
+.quotesOuterBox .quotes_cart {
+	position: relative;
+	float: right;
+	padding-top: 50px; }
+
+.quotes_cart {
+	width: 270px; }
+.quotes_cart > a:first-child {
+	padding: 7px 10px 14px 16px;
+	background: #333333;
+	display: block;
+	font-weight: bold;
+	color: #777777;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+	overflow: hidden; }
+.quotes_cart > a:first-child b {
+	color: white;
+	font: 600 18px/22px "Open Sans", sans-serif;
+	padding-right: 5px; }
+.quotes_cart > a:first-child:before {
+	color: white; }
+.quotes_cart_block .cart-buttons a.button_order_cart span {
+	padding: 7px 0;
+	font-size: 1.1em;
+	border: solid 1px #63c473;
+	background: #43b155; }
+.quotes_cart_block .cart-buttons a.button_order_cart:hover span {
+	border: solid 1px #358c43;
+	background: #2e7a3a;
+	color: white; }
+.quotes_cart_block .cart-buttons a.button_order_cart {
+	margin-right: 0;
+	border: none; }
+
+/*******************************************************************
+					Cart Block(Header) Styles
+********************************************************************/
+#header .quotes_cart_block {
+	top: 45px;
+	background: #484848;
+	color:white;
+}
+.quotesOuterBox .quotes_cart_block a {
+	color: white; }
+.quotesOuterBox .quotes_cart_block a:hover {
+	color: #9c9b9b; }
+.quotesOuterBox .quotes_cart_block .quotes_cart_block_list .remove_link a,
+.quotesOuterBox .quotes_cart_block .quotes_cart_block_list .ajax_quotes_cart_block_remove_link {
+	color: white;
+	outline: none;
+	text-decoration: none; }
+.quotesOuterBox .quotes_cart_block .quotes_cart_block_list .remove_link a:hover,
+.quotesOuterBox .quotes_cart_block .quotes_cart_block_list .ajax_quotes_cart_block_remove_link:hover {
+	color: #9c9b9b; }
+.quotesOuterBox .quotes_cart_block .price {
+	color: white; }
+.quotesOuterBox .quotes_cart_block .product-atributes a {
+	color: #9c9b9b; }
+.quotesOuterBox .quotes_cart_block .product-atributes a:hover {
+	color: white; }
+.quotesOuterBox .quotes_cart_block .cart-prices {
+	border: none;
+	background: #3d3d3d; }
+.quotesOuterBox .quotes_cart_block .cart-buttons {
+	background: #333333; }
+
+/*******************************************************************
+					Quote Button Styles
+********************************************************************/
+.ajax_add_to_quote_cart_button,
+.fly_to_quote_cart_button {
+	cursor: pointer;
+	padding: 0;
+	margin: 0 auto!important;
+	border-top: 1px solid #0079b6;
+	border-right: 1px solid #006fa8;
+	border-left: 1px solid #006fa8;
+	border-bottom: 1px solid #012740;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	position: relative;
+	display: block;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009ad0), color-stop(100%, #007ab7));
+	background-image: -webkit-linear-gradient(#009ad0, #007ab7);
+	background-image: -moz-linear-gradient(#009ad0, #007ab7);
+	background-image: -o-linear-gradient(#009ad0, #007ab7);
+	background-image: linear-gradient(#009ad0, #007ab7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ad0', endColorstr='#007ab7',GradientType=0 );
+}
+.ajax_add_to_quote_cart_button:hover,
+.fly_to_quote_cart_button:hover {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #007ab7), color-stop(100%, #009ad0));
+	background-image: -webkit-linear-gradient(#007ab7, #009ad0);
+	background-image: -moz-linear-gradient(#007ab7, #009ad0);
+	background-image: -o-linear-gradient(#007ab7, #009ad0);
+	background-image: linear-gradient(#007ab7, #009ad0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007ab7', endColorstr='#009ad0',GradientType=0 );
+	background-position: 0 0;
+}
+.ajax_add_to_quote_cart_button:before, .fly_to_quote_cart_button:before {
+	font-family: "FontAwesome";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	color: white;
+	font-size: 25px;
+	line-height: 47px;
+	text-shadow: 0 1px #015883;
+	content: "\f059";
+	z-index: 2;
+	width: 51px;
+	text-align: center;
+	border: 1px solid #06b2e6;
+	-webkit-border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	-ms-border-radius: 5px 0 0 5px;
+	-o-border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px;
+}
+.ajax_add_to_quote_cart_button:after, .fly_to_quote_cart_button:after {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 51px;
+	content: "";
+	width: 1px;
+	z-index: 2;
+}
+.ajax_add_to_quote_cart_button span, .fly_to_quote_cart_button span {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 22px;
+	cursor:pointer;
+	border-top: 1px solid #06b2e6;
+	border-right: 1px solid #06b2e6;
+	border-left: 1px solid #06b2e6;
+	border-bottom: 1px solid #06b2e6;
+	text-shadow: 0 1px #015883;
+	padding: 12px 36px 14px 60px;
+	color: white;
+	display: block !important;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
