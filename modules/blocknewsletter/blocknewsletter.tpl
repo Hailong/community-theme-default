@@ -1,11 +1,11 @@
 <section id="blocknewsletter" class="col-xs-12 col-sm-3">
-  <h4>{l s='Newsletter' mod='blocknewsletter'}</h4>
+  <h2 class="footer-title section-footer-title">{l s='Newsletter' mod='blocknewsletter'}</h2>
   <form action="{$link->getPageLink('index', null, null, null, false, null, true)|escape:'html':'UTF-8'}" method="post">
     <div class="form-group{if isset($msg) && $msg } {if $nw_error}form-error{else}form-ok{/if}{/if}" >
       <div class="input-group">
-        <input class="form-control" id="newsletter-input" type="email" name="email" size="18" value="{if isset($msg) && $msg}{$msg}{elseif isset($value) && $value}{$value}{else}{l s='Enter your e-mail' mod='blocknewsletter'}{/if}"/>
+        <input class="form-control" id="newsletter-input" type="email" name="email" size="18" value="{if isset($msg) && $msg}{$msg}{elseif isset($value) && $value}{$value}{else}{l s='Enter your e-mail' mod='blocknewsletter'}{/if}" aria-label="Email Address"/>
         <span class="input-group-btn">
-          <button type="submit" name="submitNewsletter" class="btn btn-primary">
+          <button type="submit" name="submitNewsletter" class="btn btn-primary" aria-label="Sign up">
             <i class="icon icon-chevron-right"></i>
           </button>
         </span>

@@ -119,8 +119,8 @@ gulp.task('format-js', function() {
 		'!./js/autoload/**/*.js',
 		'!./js/debug/**/*.js'
 	])
-		.pipe(jscs({fix: true}))
-		.pipe(gulp.dest('./'));
+		.pipe(jscs({fix: false}))
+		.pipe(gulp.dest('./js/'));
 });
 
 

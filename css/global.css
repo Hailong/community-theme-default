@@ -2604,20 +2604,20 @@ fieldset[disabled] a.btn {
 
 .btn-default:focus, .btn-default.focus {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #8c8c8c;
 }
 
 .btn-default:hover {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #adadad;
 }
 
 .btn-default:active, .btn-default.active,
 .open > .btn-default.dropdown-toggle {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #adadad;
 }
 
@@ -4111,7 +4111,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
+  color: #5e5d5d;
   background-color: transparent;
 }
 
@@ -9375,6 +9375,10 @@ label.required:after {
   background-color: #fcf8e3;
 }
 
+.btn {
+  padding: 9px 12px;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -9469,6 +9473,10 @@ body.content_only {
   padding-top: 15px;
   border-top: 1px solid #ccc;
   text-align: center;
+}
+
+.footer-title {
+  font-size: 20px;
 }
 
 .price {
@@ -9586,6 +9594,10 @@ ul.address {
   margin: 0 0 15px;
 }
 
+.block h3 .product-name {
+  font-size: 17px;
+}
+
 .block .list-block ul {
   padding: 0;
   margin: 0 0 10px;
@@ -9641,6 +9653,10 @@ ul.address {
 
 .block .products-block li .product-content h5 {
   margin-top: 0;
+}
+
+.post-name {
+  font-size: 17px;
 }
 
 .instant_search .productsSortForm {
