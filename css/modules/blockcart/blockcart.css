@@ -28,11 +28,12 @@
 #blockcart-header {
   height: 49px;
   padding: 0 16px;
-  line-height: 49px;
-  background: #337ab7;
-  color: #fff;
+  line-height: 46px;
+  background: black;
+  color: #fad629;
   display: block;
   overflow: hidden;
+  font-weight: bold;
 }
 
 #blockcart-header:after {

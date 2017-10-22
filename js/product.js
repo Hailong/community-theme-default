@@ -306,6 +306,7 @@ $(document).on('click', '#customizedDatas input', function() {
 $(document).on('click', '.color_pick', function(e) {
   e.preventDefault();
   colorPickerClick($(this));
+  findCombination();
   getProductAttribute();
 });
 
@@ -331,6 +332,7 @@ $(document).on('change', '.attribute_select', function(e) {
 
 $(document).on('click', '.attribute_radio', function(e) {
   e.preventDefault();
+  findCombination();
   getProductAttribute();
 });
 
@@ -592,7 +594,7 @@ function updateDisplay() {
       }
     }
   } else {
-    //show the hook out of stock
+    // show the hook out of stock
     if (productAvailableForOrder == 1) {
       $oosHook.show();
       if ($oosHook.length && function_exists('oosHookJsCode')) {
@@ -600,17 +602,17 @@ function updateDisplay() {
       }
     }
 
-    //hide 'last quantities' message if it was previously visible
+    // hide 'last quantities' message if it was previously visible
     $lastQuantities.hide();
 
-    //hide the quantity of pieces if it was previously visible
+    // hide the quantity of pieces if it was previously visible
     $('#pQuantityAvailable:visible').hide();
 
-    //hide the choice of quantities
+    // hide the choice of quantities
     if (!allowBuyWhenOutOfStock)
       $('#quantity_wanted_p:visible').hide();
 
-    //display that the product is unavailable with theses attributes
+    // display that the product is unavailable with theses attributes
     if (!selectedCombination['unavailable']) {
       $availabilityValue.text(doesntExistNoMore + (globalQuantity > 0 ? ' ' + doesntExistNoMoreBut : ''));
       if (!allowBuyWhenOutOfStock) {
@@ -797,12 +799,13 @@ function updatePrice() {
   /*  Update the page content, no price calculation happens after */
 
   var $reductionPercent = $('#reduction_percent');
-  var $reductionAmount  = $('#reduction_amount');
+  var $reductionAmount = $('#reduction_amount');
   var $unitPrice = $('.unit-price');
   var $priceEcotax = $('.price-ecotax');
 
   var $oldPriceElements = $('#old_price, #old_price_display, #old_price_display_taxes');
   var $ourPriceDisplay = $('#our_price_display');
+  var $oldPriceDisplay = $('#old_price_display');
 
   // Hide everything then show what needs to be shown
   $reductionPercent.hide();
@@ -813,13 +816,17 @@ function updatePrice() {
 
   if (priceWithDiscountsDisplay > 0) {
     $ourPriceDisplay.text(formatCurrency(priceWithDiscountsDisplay, currencyFormat, currencySign, currencyBlank)).trigger('change');
+    $oldPriceDisplay.text(formatCurrency(basePriceDisplay, currencyFormat, currencySign, currencyBlank)).trigger('change');
     if (findSpecificPrice()) {
       $('#our_price_display').text(findSpecificPrice()).trigger('change');
+      $('#old_price_display').text(findSpecificPrice()).trigger('change');
     } else {
       $('#our_price_display').text(formatCurrency(priceWithDiscountsDisplay, currencyFormat, currencySign, currencyBlank)).trigger('change');
+      $('#old_price_display').text(formatCurrency(basePriceDisplay, currencyFormat, currencySign, currencyBlank)).trigger('change');
     }
   } else {
     $ourPriceDisplay.text(formatCurrency(0, currencyFormat, currencySign, currencyBlank)).trigger('change');
+    $oldPriceDisplay.text(formatCurrency(0, currencyFormat, currencySign, currencyBlank)).trigger('change');
   }
 
   // If the calculated price (after all discounts) is different than the base price
@@ -918,7 +925,8 @@ function updateDiscountTable(newPrice) {
       discountUpTo = discount * quantity;
     }
 
-    if (displayDiscountPrice != 0) {
+    if (discountedPrice != 0) {
+      $(this).attr('data-real-discount-value', formatCurrency(discountedPrice * currencyRate, currencyFormat, currencySign, currencyBlank));
       $(this).children('td').eq(1).text(formatCurrency(discountedPrice * currencyRate, currencyFormat, currencySign, currencyBlank));
     }
     $(this).children('td').eq(2).text(upToTxt + ' ' + formatCurrency(discountUpTo * currencyRate, currencyFormat, currencySign, currencyBlank));
